@@ -1,0 +1,15 @@
+name: Bitbake Lint
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: igoropaniuk/bitbake-lint-action@v1
+        with:
+          diff_only: 'true'
+          hide: info
